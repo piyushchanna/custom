@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS</title>
+	<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+	
+
+	<script type="text/javascript">
+		var mod=angular.module("Mymodule",[]);
+		mod.directive("ngCtrl",function(){ // Custom Directive to copy the input field value to the page
+			return {
+				template:"<p> The text is: {{name}}</p>",
+				restrict:'A'
+			}
+		});
+	</script>
+</head>
+<body ng-app="Mymodule">
+	<br><br><br>
+	<form>
+	<div>
+					<p>enter name</p>
+					<div>
+						<input type="text"  ng-model="name">
+					</div>
+				</div>
+	</form>
+	<br><br><br><br><br>
+	<div ng-ctrl>
+		
+	</div>
+</body>
+</html>

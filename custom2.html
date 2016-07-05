@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS</title>
+	<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		var mod=angular.module("MyModule",[]);
+		mod.directive("ngDir2",function(){ 
+			return {
+				template:"<button ng-click='pop()'>Class</button>",
+				restrict:'C'
+			}
+		});
+		mod.directive("ngDir1",function(){ 
+			return {
+				template:"<button ng-click='pop()'>Element</button>",
+				restrict:'E'
+			}
+		});
+		mod.directive("ngDir3",function(){ 
+			return {
+				template:"<button ng-click='pop()'>Attribute</button>",
+				restrict:'A',
+			}
+		});
+		mod.directive("ngDir4",function(){  
+			return { 
+				template : '<button ng-click="pop()">Comment</button>',
+				restrict : 'M',
+				replace : 'false'
+			}
+		});
+		mod.controller("control",function($scope){ 
+			$scope.pop= function(){
+				alert('hello');
+			}
+		})
+	</script>
+</head>
+<body ng-app="MyModule"  ng-controller="control">
+	<br><br>
+	<ng-dir1></ng-dir1><br>
+	<div class="ng-dir2"></div><br>
+	<div ng-dir3></div><br>
+	
+	<br><br><br><br>
+	
+		
+	</div>
+</body>
+</html>
